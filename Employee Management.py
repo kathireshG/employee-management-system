@@ -1112,6 +1112,41 @@ first_slide_pic=Label(display_Frame,image=first_slide_pici,bd=0).place(x=150,y=6
 
 #----------------MENU BUTTONS----------------------
 
+def onclick(e):
+    display['bg']='SpringGreen2'
+def leaveButton(e):
+    display['bg']='lightgreen'
+
+def onclick1(e):
+    add['bg']='SpringGreen2'
+def leaveButton1(e):
+    add['bg']='lightgreen'
+
+def onclick2(e):
+    search['bg']='SpringGreen2'
+def leaveButton2(e):
+    search['bg']='lightgreen'
+
+def onclick3(e):
+    sort['bg']='SpringGreen2'
+def leaveButton3(e):
+    sort['bg']='lightgreen'
+
+def onclick4(e):
+    modify['bg']='SpringGreen2'
+def leaveButton4(e):
+    modify['bg']='lightgreen'
+
+def onclick5(e):
+    delete['bg']='SpringGreen2'
+def leaveButton5(e):
+    delete['bg']='lightgreen'
+
+def onclick6(e):
+    exit1['bg']='SpringGreen2'
+def leaveButton6(e):
+    exit1['bg']='lightgreen'
+
 menuimage=PhotoImage(file='icons/MENU.png')
 
 menu=Label(frame,image=menuimage,font=("arial",20,'bold'),fg='white',bg='gray44').pack(fill=X,pady=10)
@@ -1120,37 +1155,56 @@ Photo1image=Photo1.subsample(3,3)
 display=Button(frame,command=displaydata,text='DISPLAY',image=Photo1image,bd=10,bg='lightgreen',relief='ridge',compound=LEFT,font=("arial",15,'bold'),padx=10,pady=10)
 display.pack(fill=X,pady=8)
 
+display.bind('<Enter>',onclick)
+display.bind('<Leave>',leaveButton)
 
 Photo2=PhotoImage(file='icons/add.png')
 Photo2image=Photo2.subsample(3,3)
 add=Button(frame,command=adddata,text='ADD DATA',image=Photo2image,bd=10,bg='lightgreen',relief='ridge',compound=LEFT,font=("arial",15,'bold'),padx=10,pady=10)
 add.pack(fill=X,pady=8)
 
+add.bind('<Enter>',onclick1)
+add.bind('<Leave>',leaveButton1)
+
 Photo3=PhotoImage(file='icons/search.png')
 Photo3image=Photo3.subsample(3,3)
 search=Button(frame,command=searchdata,image=Photo3image,text='SEARCH',bd=10,bg='lightgreen',relief='ridge',compound=LEFT,font=("arial",15,'bold'),padx=10,pady=10)
 search.pack(fill=X,pady=8)
+
+search.bind('<Enter>',onclick2)
+search.bind('<Leave>',leaveButton2)
 
 Photo4=PhotoImage(file='icons/sort.png')
 Photo4image=Photo4.subsample(3,3)
 sort=Button(frame,text='SORT',command=sortdata,bd=10,image=Photo4image,bg='lightgreen',relief='ridge',compound=LEFT,font=("arial",15,'bold'),padx=10,pady=10)
 sort.pack(fill=X,pady=8)
 
+sort.bind('<Enter>',onclick3)
+sort.bind('<Leave>',leaveButton3)
+
 Photo5=PhotoImage(file='icons/modify.png')
 Photo5image=Photo5.subsample(3,3)
 modify=Button(frame,command=modifydata,text='MODIFY',bd=10,image=Photo5image,bg='lightgreen',relief='ridge',compound=LEFT,font=("arial",15,'bold'),padx=10,pady=10)
 modify.pack(fill=X,pady=8)
+
+modify.bind('<Enter>',onclick4)
+modify.bind('<Leave>',leaveButton4)
 
 Photo6=PhotoImage(file='icons/delete.png')
 Photo6image=Photo6.subsample(3,3)
 delete=Button(frame,command=deletedata,image=Photo6image,text='DELETE',bd=10,bg='lightgreen',relief='ridge',compound=LEFT,font=("arial",15,'bold'),padx=10,pady=6)
 delete.pack(fill=X,pady=8)
 
+delete.bind('<Enter>',onclick5)
+delete.bind('<Leave>',leaveButton5)
+
 Photo7=PhotoImage(file='icons/exit.png')
 Photo7image=Photo7.subsample(3,3)
 exit1=Button(frame,image=Photo7,bd=10,bg='lightgreen',relief='ridge',compound=LEFT,command=exit,font=("arial",15,'bold'),padx=10,pady=10)
 exit1.pack(fill=X,pady=8)
 
+exit1.bind('<Enter>',onclick6)
+exit1.bind('<Leave>',leaveButton6)
 style = ttk.Style()
 style.theme_use("clam")
 style.configure("Treeview",font=('arial',12))
